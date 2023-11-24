@@ -1,0 +1,1 @@
+export const mockArray = [...Array(20000)].map((_, i) => i);
