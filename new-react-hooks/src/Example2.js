@@ -1,4 +1,4 @@
-import { useDeferredValue, useEffect, useState } from "react";
+import { useDeferredValue, useEffect, useState } from "react"; //WORK IN PROGRESS FOR useDeferredValue hook demo
 import { mockArray } from "./mockArray";
 
 function Example2() {
