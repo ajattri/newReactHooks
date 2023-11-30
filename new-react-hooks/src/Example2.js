@@ -8,31 +8,33 @@ function Example2() {
   const handleInputChange = (e) => {
     const query = e.target.value;
     setInputValue(query);
-    
-    //   const updatedList = array.filter((item) =>
-    //     item.toString().includes(query)
-    //   );
-    //   console.log({ updatedList });
-    //   setList(updatedList);
   };
-  function getFilteredList(inputVal){
-    const updatedList = mockArray.filter((item) =>
-        item.toString().includes(inputVal)
-      );
-      console.log({ updatedList });
-      setList(updatedList);
-  }
-  useEffect(()=>{
-    getFilteredList(deferredInputValue)
-  },[deferredInputValue])
-  const listToShow = list.map((item) => {
+  // let updatedList=[];
+  // function getFilteredList(inputVal){
+  //    updatedList = list.filter((item) =>
+  //       item.toString().includes(inputVal)
+  //     ) 
+  //     console.log({ updatedList });
+  //     // setList(updatedList);
+    
+  // }
+  // useEffect(()=>{
+  //   getFilteredList(inputValue)
+  // },[inputValue])
+
+
+  const updatedList = list.filter((item) =>
+  item.toString().includes(deferredInputValue)
+) || list;
+console.log({updatedList})
+  const listToShow = (updatedList.length>0? updatedList:list).map((item) => {
     return (
       <ul key={item}>
         <li>{item}</li>
       </ul>
     );
   });
-  console.log({ list});
+  // console.log({ list});
 
   return (
     <div>
